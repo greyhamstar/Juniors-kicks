@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-guard="admin">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShoeX — Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-guard="admin">
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-badge">SX</div>
+        <span>ShoeX Admin</span>
+      </a>
+      <div class="actions">
+        <a class="btn" href="index.html">View store</a>
+        <button class="btn danger" id="logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="admin-page" class="container">
+    <div class="tabs">
+      <button class="tab active" data-target="sec-products">Products</button>
+      <button class="tab" data-target="sec-brands">Brands</button>
+      <button class="tab" data-target="sec-orders">Orders</button>
+    </div>
+
+    <!-- Products -->
+    <section id="sec-products" class="admin-section" style="display:block">
+      <div class="detail" style="grid-template-columns:1fr 1fr">
+        <div class="cardish">
+          <h2 style="margin-top:0">Add a shoe</h2>
+          <form id="admin-form">
+            <div class="field">
+              <label for="a-name">Shoe name</label>
+              <input id="a-name" type="text" required>
+            </div>
+            <div class="field">
+              <label for="a-desc">Description</label>
+              <textarea id="a-desc" rows="4" required></textarea>
+            </div>
+            <div class="field">
+              <label for="a-price">Price (ZAR)</label>
+              <input id="a-price" type="number" min="0" step="0.01" required>
+            </div>
+            <div class="field">
+              <label for="a-brand">Brand</label>
+              <select id="a-brand"></select>
+            </div>
+            <div class="field">
+              <label for="a-image">Image URL (optional)</label>
+              <input id="a-image" type="url" placeholder="https://…">
+            </div>
+            <div class="actions">
+              <button class="btn primary" type="submit">Add shoe</button>
+            </div>
+          </form>
+        </div>
+        <div class="cardish">
+          <h2 style="margin-top:0">Current catalogue</h2>
+          <div id="preview-grid" class="grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section id="sec-brands" class="admin-section" style="display:none">
+      <div class="detail" style="grid-template-columns:1fr 1fr">
+        <div class="cardish">
+          <h2 style="margin-top:0">Brands</h2>
+          <div id="brands-list"></div>
+        </div>
+        <div class="cardish">
+          <h2 style="margin-top:0">Add brand</h2>
+          <form id="add-brand-form">
+            <div class="field">
+              <label for="brand-name">Brand name</label>
+              <input id="brand-name" type="text" placeholder="e.g., Nike" required>
+            </div>
+            <button class="btn primary" type="submit">Add brand</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Orders -->
+    <section id="sec-orders" class="admin-section" style="display:none">
+      <div class="cardish">
+        <h2 style="margin-top:0">Orders</h2>
+        <div id="orders-box"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> ShoeX. Admin.</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

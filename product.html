@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShoeX — Product</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-badge">SX</div>
+        <span>ShoeX</span>
+      </a>
+      <div class="actions">
+        <a class="btn" href="index.html">Catalogue</a>
+        <a class="btn primary" href="checkout.html">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="product-wrap" class="detail">
+      <div>
+        <img id="p-img" alt="Shoe image" style="border-radius:16px;border:1px solid var(--border)">
+      </div>
+      <div>
+        <span class="brand-tag" id="p-brand"></span>
+        <h1 id="p-title" style="margin-top:6px"></h1>
+        <div class="price" id="p-price"></div>
+        <p id="p-desc" class="muted"></p>
+        <div class="field">
+          <label for="p-size">Size</label>
+          <select id="p-size" required></select>
+        </div>
+        <div class="field">
+          <label>Quantity</label>
+          <input id="p-qty" type="number" min="1" value="1" style="width:100px">
+        </div>
+        <div class="actions">
+          <button class="btn primary" id="add-to-cart">Add to cart</button>
+          <button class="btn" id="go-checkout">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> ShoeX. Demo store.</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

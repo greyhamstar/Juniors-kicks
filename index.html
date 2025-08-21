@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShoeX — Catalogue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-badge">SX</div>
+        <span>ShoeX</span>
+      </a>
+      <div class="searchbar">
+        <input id="search" type="search" placeholder="Search shoes (press Enter)…" aria-label="Search">
+      </div>
+      <div class="actions">
+        <a class="btn" href="admin-login.html" title="Admin">Admin</a>
+        <a class="btn primary" href="checkout.html" title="Cart">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Shoes for every move.</h1>
+        <p>Scroll the catalogue, filter by brand, click a shoe to pick your size, and check out.</p>
+        <div class="actions">
+          <a class="btn primary" href="#catalogue">Shop now</a>
+          <a class="btn" href="admin-login.html">Admin portal</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1526152505826-7c65b05ab8b6?q=80&w=1600&auto=format&fit=crop" alt="Assorted sneakers">
+      </div>
+    </section>
+
+    <h2 id="catalogue" style="margin:0 0 8px">Catalogue</h2>
+    <div id="brand-chips" class="filters" aria-label="Brand filters"></div>
+    <div id="catalog-grid" class="grid" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> ShoeX. Demo store.</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

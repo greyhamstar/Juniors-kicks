@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShoeX — Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-badge">SX</div>
+        <span>ShoeX</span>
+      </a>
+      <div class="actions">
+        <a class="btn" href="index.html">Catalogue</a>
+        <a class="btn primary" href="checkout.html">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Checkout</h1>
+    <div style="overflow-x:auto">
+      <table class="table" aria-describedby="order-summary">
+        <thead>
+          <tr><th></th><th>Shoe</th><th>Price</th><th>Qty</th><th></th></tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+        <tfoot>
+          <tr><td colspan="4" style="text-align:right">Total</td><td class="price" id="grand-total">R0.00</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="cardish" style="margin-top:16px">
+      <h3 style="margin-top:0">Customer details</h3>
+      <div class="detail" style="grid-template-columns:1fr 1fr">
+        <div class="field">
+          <label for="c-first">First name</label>
+          <input id="c-first" type="text" placeholder="e.g., John" required>
+        </div>
+        <div class="field">
+          <label for="c-last">Surname</label>
+          <input id="c-last" type="text" placeholder="e.g., Doe" required>
+        </div>
+        <div class="field">
+          <label for="c-email">Email</label>
+          <input id="c-email" type="email" placeholder="e.g., john@example.com" required>
+        </div>
+        <div class="field">
+          <label for="c-phone">Phone</label>
+          <input id="c-phone" type="text" placeholder="e.g., 072 123 4567" required>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label for="c-address">Address</label>
+          <textarea id="c-address" rows="3" placeholder="Street, suburb, city, postal code" required></textarea>
+        </div>
+      </div>
+      <p class="muted" style="margin:0">All fields are required.</p>
+    </div>
+
+    <div class="actions" style="margin-top:14px">
+      <a class="btn" href="index.html">Continue shopping</a>
+      <button class="btn primary" id="place-order">Place order</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> ShoeX. Demo store.</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

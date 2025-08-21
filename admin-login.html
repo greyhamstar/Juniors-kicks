@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShoeX — Admin Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-badge">SX</div>
+        <span>ShoeX</span>
+      </a>
+      <div class="actions">
+        <a class="btn" href="index.html">Back to store</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="detail" style="grid-template-columns:1fr">
+      <div id="create-admin" class="cardish" style="display:none">
+        <h2 style="margin-top:0">Create Admin</h2>
+        <p class="muted">First time setup. This is a demo login stored in your browser.</p>
+        <form id="create-form">
+          <div class="field">
+            <label for="c-username">Username</label>
+            <input id="c-username" type="text" required>
+          </div>
+          <div class="field">
+            <label for="c-password">Password</label>
+            <input id="c-password" type="password" required>
+          </div>
+          <button class="btn primary" type="submit">Create admin</button>
+        </form>
+      </div>
+
+      <div id="login-admin" class="cardish" style="display:none">
+        <h2 style="margin-top:0">Admin Login</h2>
+        <form id="login-form">
+          <div class="field">
+            <label for="l-username">Username</label>
+            <input id="l-username" type="text" required>
+          </div>
+          <div class="field">
+            <label for="l-password">Password</label>
+            <input id="l-password" type="password" required>
+          </div>
+          <button class="btn primary" type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> ShoeX. Demo store.</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
