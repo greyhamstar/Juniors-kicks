@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ShoeX — Checkout</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,16 +12,26 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="ShoeX home">
         <div class="brand-badge">SX</div>
         <span>ShoeX</span>
       </a>
-      <div class="actions">
+      <div class="actions desktop-only">
         <a class="btn" href="index.html">Catalogue</a>
         <a class="btn primary" href="checkout.html">Cart</a>
       </div>
+      <button id="menu-toggle" class="menu-toggle mobile-only" aria-label="Open menu">☰</button>
     </div>
   </header>
+
+  <div id="nav-drawer" class="drawer" aria-hidden="true">
+    <div class="overlay"></div>
+    <div class="panel">
+      <a class="btn" href="index.html">Catalogue</a>
+      <a class="btn" href="admin-login.html">Admin</a>
+      <a class="btn primary" href="checkout.html">Cart</a>
+    </div>
+  </div>
 
   <main class="container">
     <h1>Checkout</h1>
@@ -38,7 +48,7 @@
     </div>
 
     <div class="cardish" style="margin-top:16px">
-      <h3 style="margin-top:0">Customer details</h3>
+      <h2 style="margin-top:0">Customer details</h2>
       <div class="detail" style="grid-template-columns:1fr 1fr">
         <div class="field">
           <label for="c-first">First name</label>
@@ -54,7 +64,7 @@
         </div>
         <div class="field">
           <label for="c-phone">Phone</label>
-          <input id="c-phone" type="text" placeholder="e.g., 072 123 4567" required>
+          <input id="c-phone" type="tel" inputmode="tel" placeholder="e.g., 072 123 4567" required>
         </div>
         <div class="field" style="grid-column:1/-1">
           <label for="c-address">Address</label>

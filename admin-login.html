@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ShoeX — Admin Login</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +12,24 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="ShoeX home">
         <div class="brand-badge">SX</div>
         <span>ShoeX</span>
       </a>
-      <div class="actions">
+      <div class="actions desktop-only">
         <a class="btn" href="index.html">Back to store</a>
       </div>
+      <button id="menu-toggle" class="menu-toggle mobile-only" aria-label="Open menu">☰</button>
     </div>
   </header>
+
+  <div id="nav-drawer" class="drawer" aria-hidden="true">
+    <div class="overlay"></div>
+    <div class="panel">
+      <a class="btn" href="index.html">Catalogue</a>
+      <a class="btn primary" href="checkout.html">Cart</a>
+    </div>
+  </div>
 
   <main class="container">
     <div class="detail" style="grid-template-columns:1fr">

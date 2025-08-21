@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ShoeX — Catalogue</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,19 +12,30 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="ShoeX home">
         <div class="brand-badge">SX</div>
         <span>ShoeX</span>
       </a>
-      <div class="searchbar">
+      <div class="searchbar desktop-only">
         <input id="search" type="search" placeholder="Search shoes (press Enter)…" aria-label="Search">
       </div>
-      <div class="actions">
+      <div class="actions desktop-only">
         <a class="btn" href="admin-login.html" title="Admin">Admin</a>
         <a class="btn primary" href="checkout.html" title="Cart">Cart</a>
       </div>
+      <button id="menu-toggle" class="menu-toggle mobile-only" aria-label="Open menu">☰</button>
     </div>
   </header>
+
+  <!-- Mobile drawer -->
+  <div id="nav-drawer" class="drawer" aria-hidden="true">
+    <div class="overlay"></div>
+    <div class="panel">
+      <a class="btn" href="index.html">Catalogue</a>
+      <a class="btn" href="admin-login.html">Admin</a>
+      <a class="btn primary" href="checkout.html">Cart</a>
+    </div>
+  </div>
 
   <main class="container">
     <section class="hero">
@@ -42,7 +53,7 @@
     </section>
 
     <h2 id="catalogue" style="margin:0 0 8px">Catalogue</h2>
-    <div id="brand-chips" class="filters" aria-label="Brand filters"></div>
+    <div id="brand-chips" class="filters" aria-label="Brand filters" tabindex="0"></div>
     <div id="catalog-grid" class="grid" aria-live="polite"></div>
   </main>
 

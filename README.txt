@@ -1,22 +1,15 @@
 
-ShoeX — Shoe Store (LocalStorage Demo) — v3
-===========================================
+ShoeX v4 — Mobile-Optimized
+===========================
 
-Update
-------
-- **Checkout now requires customer details**: First name, Surname, Email, Phone, and Address are mandatory.
-- **Validation**: Basic email and phone validation before placing an order.
-- **Orders page**: Admin can see customer name, email, phone, and address on each order card.
+What's new (mobile):
+- Hamburger menu with slide-in drawer on small screens
+- Sticky bottom CTA on product page (Add to cart / Checkout)
+- Larger tap targets, responsive typography (clamp), safe-area support
+- Scrollable brand chips
+- Checkout phone field uses `type="tel"` with mobile keyboard hints
 
-Quick Start
------------
-1) Unzip the folder.
-2) Open `admin-login.html` and create/login as admin (first time only).
-3) Add brands and products in the Admin dashboard.
-4) Browse `index.html`, add items to cart, go to `checkout.html`.
-5) Fill in all required details and click **Place order**.
-6) Check **Admin → Orders** to view the saved order with customer details.
-
-Notes
------
-- This is a static demo using `localStorage` (single-browser, not secure). For production, use a backend (e.g., Firebase).
+How to use
+1) Upload all files to your GitHub repo root (or open locally).
+2) Open `index.html` on your phone to test mobile view.
+3) Product page shows a sticky bottom bar on mobile for quick actions.
